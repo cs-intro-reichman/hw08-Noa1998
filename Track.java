@@ -1,3 +1,5 @@
+import javax.print.attribute.standard.Fidelity;
+
 /** Represents a music track. A track has a title (String), an artist (String), 
  *  and a duration (int), in seconds. */
 class Track {
@@ -43,6 +45,15 @@ class Track {
     // Where seconds is always two digits. For example, "3:17" or "12:05".
     private String formattedDuration(int totalSeconds) {
         //// replace the following statement with your code
-        return "";
+        int FixedMinutes = duration / 60;
+        int FixedSeconds = duration % 60;
+        String str = "";
+        if (FixedSeconds > 10){
+            str = (FixedMinutes+":"+FixedSeconds);
+        } else {
+            str = (FixedMinutes+":0"+FixedSeconds);
+        }
+
+        return str;
     }
 }
